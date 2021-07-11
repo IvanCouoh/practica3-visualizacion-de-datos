@@ -1,4 +1,7 @@
 // Grafica "Número de colmenas", de 2011- 2018.//
+google.charts.load('current', { 'packages': ['table'] });
+google.charts.setOnLoadCallback(drawTable);
+
 function drawTable() {
 
     var data = new google.visualization.DataTable();
