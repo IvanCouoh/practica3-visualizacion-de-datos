@@ -1,70 +1,21 @@
 // Grafica "Número de colmenas", de 2011- 2018.//
-function drawChart() {
+function drawTable() {
 
-    var data = google.visualization.arrayToDataTable([
-        ['Year', 'Sales', 'Expenses'],
-        ['2011', 1000, 400],
-        ['2012', 1170, 460],
-        ['2013', 660, 1120],
-        ['2014', 1030, 540]
-        ['2015', 1000, 400],
-        ['2016', 1170, 460],
-        ['2017', 660, 1120],
-        ['2018', 1030, 540]
+    var data = new google.visualization.DataTable();
+    data.addColumn('number', 'Año');
+    data.addColumn('number', '# Colmenas');
+    data.addRows([
+        ['2011', { v: 1847667, f: '1847667' }],
+        ['2012', { v: 1898239, f: '1898239' }],
+        ['2013', { v: 1933105, f: '1933105' }],
+        ['2014', { v: 1981162, f: '1981162' }],
+        ['2015', { v: 2017931, f: '2017931' }],
+        ['2016', { v: 1859350, f: '1859350' }],
+        ['2017', { v: 1853807, f: '1853807' }],
+        ['2018', { v: 2172107, f: '2172107' }],
     ]);
 
-    var options = {
-        title: 'Company Performance',
-        hAxis: { title: 'Year', titleTextStyle: { color: '#333' } },
-        vAxis: { minValue: 0 }
-    };
+    var table = new google.visualization.Table(document.getElementById('numeroColmenas'));
 
-    var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
-    chart.draw(data, options);
+    table.draw(data, { showRowNumber: true, width: '100%', height: '100%' });
 }
-
-
-
-
-// GRAFICA 2
-google.charts.load('current', {'packages':['line']});
-      google.charts.setOnLoadCallback(drawChart);
-
-    function drawChart() {
-
-      var data = new google.visualization.DataTable();
-      data.addColumn('number', 'Day');
-      data.addColumn('number', 'Guardians of the Galaxy');
-      data.addColumn('number', 'The Avengers');
-      data.addColumn('number', 'Transformers: Age of Extinction');
-
-      data.addRows([
-        [1,  37.8, 80.8, 41.8],
-        [2,  30.9, 69.5, 32.4],
-        [3,  25.4,   57, 25.7],
-        [4,  11.7, 18.8, 10.5],
-        [5,  11.9, 17.6, 10.4],
-        [6,   8.8, 13.6,  7.7],
-        [7,   7.6, 12.3,  9.6],
-        [8,  12.3, 29.2, 10.6],
-        [9,  16.9, 42.9, 14.8],
-        [10, 12.8, 30.9, 11.6],
-        [11,  5.3,  7.9,  4.7],
-        [12,  6.6,  8.4,  5.2],
-        [13,  4.8,  6.3,  3.6],
-        [14,  4.2,  6.2,  3.4]
-      ]);
-
-      var options = {
-        chart: {
-          title: 'Box Office Earnings in First Two Weeks of Opening',
-          subtitle: 'in millions of dollars (USD)'
-        },
-        width: 900,
-        height: 500
-      };
-
-      var chart = new google.charts.Line(document.getElementById('linechart_material'));
-
-      chart.draw(data, google.charts.Line.convertOptions(options));
-    }
