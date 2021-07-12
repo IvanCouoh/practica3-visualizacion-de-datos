@@ -4,11 +4,11 @@ body, h1, p {
     font-family: 'Roboto', sans-serif;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -46,7 +46,7 @@ a{
     z-index: 10;
 }
 
-.main{
+.main {
     grid-area: main;
     display: flex;
     flex-direction: column;
@@ -63,7 +63,7 @@ a{
     margin: 25px 0 50px 0;
 }
 
-.content-itens{
+.content-itens {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -71,8 +71,12 @@ a{
     letter-spacing: 1px;
 }
 
-.iten{
+.iten {
     color: #fff;
     font-weight: 400;
     cursor: pointer;
+}
+
+.grafica {
+    padding-top: 4rem;
 }
