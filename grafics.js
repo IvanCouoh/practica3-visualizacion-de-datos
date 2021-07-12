@@ -4,10 +4,8 @@ google.charts.setOnLoadCallback(drawTable);
 
 function drawTable() {
 
-    var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Año');
-    data.addColumn('number', '# Colmenas');
-    data.addRows([
+    var data = google.visualization.arrayToDataTable([
+        ['Year', 'Colmenas', ],
         ['2011', 1847667],
         ['2012', 1898239],
         ['2013', 1933105],
@@ -18,9 +16,15 @@ function drawTable() {
         ['2018', 2172107]
     ]);
 
-    var table = new google.visualization.Table(document.getElementById('numeroColmenas'));
+    var options = {
+        title: 'Colmenas de abejas en México',
+        curveType: 'function',
+        legend: { position: 'bottom' }
+    };
 
-    table.draw(data, { showRowNumber: true, width: '100%', height: '100%' });
+    var chart = new google.visualization.LineChart(document.getElementById('numeroColmenas'));
+
+    chart.draw(data, options);
 }
 
 // Grafica "Miel producida por entidad".//
